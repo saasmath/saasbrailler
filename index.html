@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <style type="text/css">
+            .chr {background-color: green;
+                  color: yellow;
+                  margin:  1px;
+            }
+        </style>
+
+        <script>
+            function doBackspace() {
+                $('#brl').children().last().remove();
+                $('#brl').children().last().remove();
+            }
+
+            function doNewline() {
+                $('#brl').append('<span></span>');
+                $('#brl').append('<br>');
+            }
+
+            function addBrl(code) {
+                if (code == 0) {
+                    brlutf8 = "&#x2800";
+                    character = "space";
+                }
+                if (code == 1) {
+                    brlutf8 = "&#x2801";
+                    character = "a";
+                }
+                if (code == 2) {
+                    brlutf8 = "&#x2802";
+                    character = ",";
+                }
+                if (code == 3) {
+                    brlutf8 = "&#x2803";
+                    character = "b";
+                }
+                if (code == 4) {
+                    brlutf8 = "&#x2804";
+                    character = "'";
+                }
+                if (code == 5) {
+                    brlutf8 = "&#x2805";
+                    character = "k";
+                }
+                if (code == 6) {
+                    brlutf8 = "&#x2806";
+                    character = "be";
+                }
+                if (code == 7) {
+                    brlutf8 = "&#x2807";
+                    character = "l";
+                }
+                if (code == 8) {
+                    brlutf8 = "&#x2808";
+                    character = "^";
+                }
+                if (code == 9) {
+                    brlutf8 = "&#x2809";
+                    character = "c";
+                }
+                if (code == 10) {
+                    brlutf8 = "&#x280A";
+                    character = "i";
+                }
+                if (code == 11) {
+                    brlutf8 = "&#x280B";
+                    character = "f";
+                }
+                if (code == 12) {
+                    brlutf8 = "&#x280C";
+                    character = "st";
+                }
+                if (code == 13) {
+                    brlutf8 = "&#x280D";
+                    character = "m";
+                }
+                if (code == 14) {
+                    brlutf8 = "&#x280E";
+                    character = "s";
+                }
+                if (code == 15) {
+                    brlutf8 = "&#x280F";
+                    character = "p";
+                }
+                if (code == 16) {
+                    brlutf8 = "&#x2810";
+                    character = "^"; //dot 5, alt character
+                }
+                if (code == 17) {
+                    brlutf8 = "&#x2811";
+                    character = "e";
+                }
+                if (code == 18) {
+                    brlutf8 = "&#x2812";
+                    character = ":";
+                }
+                if (code == 19) {
+                    brlutf8 = "&#x2813";
+                    character = "h";
+                }
+                if (code == 20) {
+                    brlutf8 = "&#x2814";
+                    character = "in";
+                }
+                if (code == 21) {
+                    brlutf8 = "&#x2815";
+                    character = "o";
+                }
+                if (code == 22) {
+                    brlutf8 = "&#x2816";
+                    character = "!";
+                }
+                if (code == 23) {
+                    brlutf8 = "&#x2817";
+                    character = "r";
+                }
+                if (code == 24) {
+                    brlutf8 = "&#x2818";
+                    character = "^"; //included in whowho
+                }
+                if (code == 25) {
+                    brlutf8 = "&#x2819";
+                    character = "d";
+                }
+                if (code == 26) {
+                    brlutf8 = "&#x281A";
+                    character = "j";
+                }
+                if (code == 27) {
+                    brlutf8 = "&#x281B";
+                    character = "g";
+                }
+                if (code == 28) {
+                    brlutf8 = "&#x281C";
+                    character = "are";
+                }
+                if (code == 29) {
+                    brlutf8 = "&#x281D";
+                    character = "n";
+                }
+                if (code == 30) {
+                    brlutf8 = "&#x281E";
+                    character = "t";
+                }
+                if (code == 31) {
+                    brlutf8 = "&#x281F";
+                    character = "q";
+                }
+                if (code == 32) {
+                    brlutf8 = "&#x2820";
+                    character = "CAP";
+                }
+                if (code == 33) {
+                    brlutf8 = "&#x2821";
+                    character = "ch";
+                }
+                if (code == 34) {
+                    brlutf8 = "&#x2822";
+                    character = "en";
+                }
+                if (code == 35) {
+                    brlutf8 = "&#x2823";
+                    character = "gh";
+                }
+                if (code == 36) {
+                    brlutf8 = "&#x2824";
+                    character = "-";
+                }
+                if (code == 37) {
+                    brlutf8 = "&#x2825";
+                    character = "u";
+                }
+                if (code == 38) {
+                    brlutf8 = "&#x2826";
+                    character = "?";
+                }
+                if (code == 39) {
+                    brlutf8 = "&#x2827";
+                    character = "v";
+                }
+                if (code == 40) {
+                    brlutf8 = "&#x2828";
+                    character = "ance";
+                }
+                if (code == 41) {
+                    brlutf8 = "&#x2829";
+                    character = "sh";
+                }
+                if (code == 42) {
+                    brlutf8 = "&#x282A";
+                    character = "ow";
+                }
+                if (code == 43) {
+                    brlutf8 = "&#x282B";
+                    character = "ed";
+                }
+                if (code == 44) {
+                    brlutf8 = "&#x282C";
+                    character = "ing";
+                }
+                if (code == 45) {
+                    brlutf8 = "&#x282D";
+                    character = "x";
+                }
+                if (code == 46) {
+                    brlutf8 = "&#x282E";
+                    character = "the";
+                }
+                if (code == 47) {
+                    brlutf8 = "&#x282F";
+                    character = "and";
+                }
+                if (code == 48) {
+                    brlutf8 = "&#x2830";
+                    character = "LETTER";
+                }
+                if (code == 49) {
+                    brlutf8 = "&#x2831";
+                    character = "wh";
+                }
+                if (code == 50) {
+                    brlutf8 = "&#x2832";
+                    character = ".";
+                }
+                if (code == 51) {
+                    brlutf8 = "&#x2833";
+                    character = "ou";
+                }
+                if (code == 52) {
+                    brlutf8 = "&#x2834";
+                    character = '"';
+                }
+                if (code == 53) {
+                    brlutf8 = "&#x2835";
+                    character = "z";
+                }
+                if (code == 54) {
+                    brlutf8 = "&#x2836";
+                    character = "(";
+                }
+                if (code == 55) {
+                    brlutf8 = "&#x2837";
+                    character = "of";
+                }
+                if (code == 56) {
+                    brlutf8 = "&#x2838";
+                    character = "cannot";
+                }
+                if (code == 57) {
+                    brlutf8 = "&#x2839";
+                    character = "th";
+                }
+                if (code == 58) {
+                    brlutf8 = "&#x283A";
+                    character = "w";
+                }
+                if (code == 59) {
+                    brlutf8 = "&#x283B";
+                    character = "er";
+                }
+                if (code == 60) {
+                    brlutf8 = "&#x283C";
+                    character = "NUMBER";
+                }
+                if (code == 61) {
+                    brlutf8 = "&#x283D";
+                    character = "y";
+                }
+                if (code == 62) {
+                    brlutf8 = "&#x283E";
+                    character = "with";
+                }
+                if (code == 63) {
+                    brlutf8 = "&#x283F";
+                    character = "for";
+                }
+                appendspan = '<span class="chr">' + brlutf8 + '</span>';
+                appendspan += '<span class="letter">' + character + '</span>';
+
+                //appendspan = ' '+brlutf8;
+                $('#brl').append(appendspan);
+            }
+            dot1 = dot2 = dot3 = dot4 = dot5 = dot6 = -1;
+            $(document).bind("keydown", function(event) {
+                //console.log(event.keyCode);
+                if ($.inArray(event.keyCode, [186, 65, 70, 68, 83, 74, 75, 76]) == -1)
+                    return;
+
+                if (event.keyCode == 186) {
+                    doBackspace();
+                    dot1 = dot2 = dot3 = dot4 = dot5 = dot6 = -1;
+                    return;
+                }
+                if (event.keyCode == 65) {
+                    doNewline();
+                    return;
+                }
+                if (event.keyCode == 70)
+                    dot1 = 0;
+                if (event.keyCode == 68)
+                    dot2 = 0;
+                if (event.keyCode == 83)
+                    dot3 = 0;
+                if (event.keyCode == 74)
+                    dot4 = 0;
+                if (event.keyCode == 75)
+                    dot5 = 0;
+                if (event.keyCode == 76)
+                    dot6 = 0;
+                //console.log([dot1, dot2, dot3, dot4, dot5, dot6]);
+            });
+            $(document).bind("keyup", function(event) {
+                if ($.inArray(event.keyCode, [186, 65, 70, 68, 83, 74, 75, 76]) == -1)
+                    return;
+                if (event.keyCode == 186) {
+                    return;
+                }
+                if (event.keyCode == 65) {
+                    return;
+                }
+                if (event.keyCode == 70)
+                    dot1 = 1;
+                if (event.keyCode == 68)
+                    dot2 = 1;
+                if (event.keyCode == 83)
+                    dot3 = 1;
+                if (event.keyCode == 74)
+                    dot4 = 1;
+                if (event.keyCode == 75)
+                    dot5 = 1;
+                if (event.keyCode == 76)
+                    dot6 = 1;
+                //console.log([dot1, dot2, dot3, dot4, dot5, dot6]);
+                if (dot1 * dot2 * dot3 * dot4 * dot5 * dot6 == 0)
+                    return;
+                brlchar = 0;
+                if (dot1 == 1)
+                    brlchar = 1;
+                if (dot2 == 1)
+                    brlchar = brlchar + 2;
+                if (dot3 == 1)
+                    brlchar = brlchar + 4;
+                if (dot4 == 1)
+                    brlchar = brlchar + 8;
+                if (dot5 == 1)
+                    brlchar = brlchar + 16;
+                if (dot6 == 1)
+                    brlchar = brlchar + 32;
+                console.log(brlchar);
+                addBrl(brlchar);
+                dot1 = dot2 = dot3 = dot4 = dot5 = dot6 = -1;
+            }
+            );
+
+
+        </script>
+    </head>
+    <body>
+        <div id="brl">
+
+        </div>
+    </body>
+</html>
